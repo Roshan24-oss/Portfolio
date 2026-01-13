@@ -1,4 +1,5 @@
 import React from "react";
+import img from "../assets/profile2.jpg";
 import { motion } from "framer-motion";
 import {
   FaCode,
@@ -71,7 +72,7 @@ const About = () => {
             />
             {/* Floating image */}
             <motion.img
-              src="/src/assets/profile.jpg"
+              src={img}
               alt="Roshan Khadayat profile"
               className="relative z-10 w-64 h-80 md:w-72 md:h-96 object-cover rounded-3xl shadow-2xl"
               animate={{ y: [0, -15, 0] }}
