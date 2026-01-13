@@ -20,13 +20,13 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Show popup
+    
     setShowPopup(true);
 
-    // Clear form
+    
     setFormData({ name: "", email: "", message: "" });
 
-    // Auto close popup after 3 seconds
+    
     setTimeout(() => setShowPopup(false), 3000);
   };
 
@@ -177,7 +177,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Success Popup */}
+    
       {showPopup && (
         <motion.div
           initial={{ opacity: 0 }}
