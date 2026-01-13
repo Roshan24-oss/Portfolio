@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { assets } from "../assets/assets.js";
+import profileImg from "../assets/profile.jpg";
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
     >
       <div className="flex flex-col lg:flex-row items-center justify-between w-full h-full gap-12">
 
-        {/* ================= VS CODE EDITOR ================= */}
+       
         <motion.div
           initial={{ opacity: 0, scale: 0.9, x: -100 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -28,7 +28,7 @@ const Hero = () => {
           </div>
 
           {/* Code Content */}
-          <div className="p-6 sm:p-8 font-mono text-xl sm:text-2xl md:text-3xl text-slate-200 leading-snug flex-1 overflow-hidden">
+          <div className="p-6 sm:p-8 font-mono text-xl sm:text-2xl md:text-3xl text-slate-200 leading-snug flex-1 overflow-y-auto">
             
             <p>
               <span className="text-purple-400">const</span>{" "}
@@ -64,13 +64,13 @@ const Hero = () => {
             </p>
 
             <p className="text-yellow-300 mt-2">{"};"}</p>
-
           </div>
 
           {/* Buttons */}
           <div className="px-6 sm:px-8 pb-6 flex flex-wrap gap-4 justify-start">
             <a
               href="#projects"
+              aria-label="View my projects"
               className="px-5 sm:px-6 py-3 bg-green-600 text-white rounded-lg text-lg sm:text-xl font-semibold hover:bg-purple-700 transition"
             >
               View Projects
@@ -78,6 +78,7 @@ const Hero = () => {
 
             <a
               href="#contact"
+              aria-label="Contact me"
               className="px-5 sm:px-6 py-3 border border-purple-500 text-purple-300 rounded-lg text-lg sm:text-xl font-semibold hover:bg-purple-500/10 transition"
             >
               Contact Me
@@ -85,7 +86,6 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* ================= PROFILE IMAGE ================= */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85, x: 100 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -96,7 +96,7 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 blur-3xl opacity-70"></div>
 
             <motion.img
-              src={assets.profileImg}
+              src={profileImg}
               alt="Roshan Khadayat"
               className="relative z-10 w-full h-full rounded-full object-cover border-4 border-white/30"
               animate={{ y: [0, -20, 0] }}
