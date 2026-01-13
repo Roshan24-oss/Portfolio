@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProjectCard = ({ title, description, image, tech }) => {
+const ProjectCard = ({ title, description, tech, image, link }) => {
   return (
     <div className="
       bg-dark-300
@@ -12,14 +12,19 @@ const ProjectCard = ({ title, description, image, tech }) => {
       transition
       duration-300
     ">
-      {/* Image */}
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-60 object-cover"
-      />
+      {/* Clickable Image */}
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-60 object-cover hover:opacity-90 transition"
+        />
+      </a>
 
-      {/* Content */}
       <div className="p-6">
         <h3 className="text-xl font-semibold text-white mb-2">
           {title}

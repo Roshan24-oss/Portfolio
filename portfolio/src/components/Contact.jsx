@@ -11,7 +11,7 @@ import {
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [successMessage, setSuccessMessage] = useState("");
+  const [showPopup, setShowPopup] = useState(false); // Popup state
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,15 +19,15 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would normally send the form data to a server
 
-    // Show success message
-    setSuccessMessage("Message sent successfully!");
+    // Show popup
+    setShowPopup(true);
+
     // Clear form
     setFormData({ name: "", email: "", message: "" });
 
-    // Hide message after 3 seconds
-    setTimeout(() => setSuccessMessage(""), 3000);
+    // Auto close popup after 3 seconds
+    setTimeout(() => setShowPopup(false), 3000);
   };
 
   return (
@@ -104,12 +104,6 @@ const Contact = () => {
             >
               Send Message
             </button>
-
-            {successMessage && (
-              <p className="text-green-400 font-medium text-center mt-2">
-                {successMessage}
-              </p>
-            )}
           </motion.form>
 
           {/* Contact Info */}
@@ -182,6 +176,40 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Success Popup */}
+      {showPopup && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50"
+        >
+          <motion.div
+            initial={{ scale: 0.7, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="bg-dark-300 rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl"
+          >
+            <div className="text-green-400 text-5xl mb-4">✓</div>
+
+            <h3 className="text-2xl font-semibold text-white mb-2">
+              Message Sent!
+            </h3>
+
+            <p className="text-gray-400 mb-6">
+              Thank you for reaching out. I’ll get back to you soon.
+            </p>
+
+            <button
+              onClick={() => setShowPopup(false)}
+              className="px-6 py-2 bg-purple text-white rounded-lg hover:bg-purple-700 transition"
+            >
+              Close
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
     </motion.section>
   );
 };
