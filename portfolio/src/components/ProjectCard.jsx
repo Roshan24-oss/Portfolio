@@ -12,7 +12,7 @@ const ProjectCard = ({ title, description, tech, image, link }) => {
       transition
       duration-300
     ">
-      {/* Clickable Image */}
+      
       <a
         href={link}
         target="_blank"
