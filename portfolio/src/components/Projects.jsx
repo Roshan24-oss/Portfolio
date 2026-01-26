@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 
 import HamroChat from "../assets/HamroChat (2).jpg";
 import virtualassistant from "../assets/virtualassistant.jpg";
-import clg from "../assets/clg.jpg";
+import chat from "../assets/chat.png";
 
 const projectsData = [
   {
@@ -23,11 +23,11 @@ const projectsData = [
     tech: ["React", "Node.js", "MongoDB", "Gemini API"],
   },
   {
-    title: "College Website",
-    description: "A college static home page built using React and Tailwind CSS.",
-    image: clg,
-    link: "https://college-website-ne8b.onrender.com",
-    tech: ["React", "Tailwind CSS"],
+    title: "Hello-Stranger",
+    description: "A random video chat application connecting users worldwide.",
+    image: chat,
+    link: "https://hellofriend-seven.vercel.app",
+    tech: ["Next.js", "ZegoCloud", "Tailwind CSS", "socket.io"],
   },
 ];
 
