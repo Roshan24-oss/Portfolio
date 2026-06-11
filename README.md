@@ -1,1 +1,1 @@
-This is portfolio website using React.js and tailwindcss ..
+This is portfolio website using React.js and tailwindcss .
